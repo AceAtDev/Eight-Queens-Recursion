@@ -1,14 +1,21 @@
 /*
- * Algorithm by Mohamed Elshoubky
- * ICS4U1
  * Finished date: 2022-12-18 (yyyy-MM-dd)
  * 
- * A fully recursive algorithm to solve eight queens problem
+ * A fully recursive algorithm to solve eight queens' problem
+ * 
+ * --------------------------------------------------------------------------------------------------------------------------------
+ * Keep in mind that this algorithm is not not good for performance.
+ * You can accully optimize the algorithm by using for loops instead, but it was created as a chellenge.
+ * --------------------------------------------------------------------------------------------------------------------------------
+ * 
+ * If you found a problem in the following code, please create issue on github.
+ * Thank you and have a nice day!
+ * :)
  */
 
 public class EightQueensRECU {
     // The size of the chessboard
-    public static final int N = 3;
+    public static final int N = 8;
   
     // The columns where the queens are placed
     public static int[] queens = new int[N];
@@ -60,7 +67,7 @@ public class EightQueensRECU {
       if (col >= N) { // Found a solution (end case)
         return true;
       }
-      if(start == N) { // If out of bounds, then return false
+      if(start == N) { // Can not put a queen on that row; return false
         return false; 
       }
   
@@ -78,16 +85,13 @@ public class EightQueensRECU {
             return true;
           }
   
+          // Backtrack and remove the queen that been placed
           queens[start] = -1;
-          //System.out.println("backtracked!");
           
         }
 
-
-
       }
-      // If the queen cannot be placed in any row in this column, then return false
-      //System.out.println("Reached False end!");
+      // Continue to placing trying to put a queen on that row
       return solveNQueensUtil(col, start + steps, steps);
 
     }
@@ -102,15 +106,30 @@ public class EightQueensRECU {
     }
   
     public static void main(String[] args) {
-      
+
+      /*
+       * How it works:
+       * 1. initialize all entries with solveNQueens method
+       * 2. Solve the N Queen problem with solveNQueensUtil function
+       * 3. print the solution with printSolution method
+       * 4. Done
+       * 
+       * Note: you will need reinitialize solveNQueens if you want to use solveNQueensUtil to find another solution.
+       * ALSO, column must equal 0 in solveNQueensUtil to solve correctly!
+      */
+
+
+
+      /* Solves for one soluation  */
       solveNQueens();
 
-      //solveNQueensUtil(0, 0, 1);
+      solveNQueensUtil(0, 0, 1);
 
-      //printSolution();
+      printSolution();
 
       
-      
+      /* Use the below if you want to find more then one soluation!  */
+      /* 
       for (int i = 0; i < N; i++) {
 
           if(solveNQueensUtil(0, i, 1)){
@@ -122,22 +141,6 @@ public class EightQueensRECU {
             System.out.println("No solution for when start is " + i);
           }
         
-        
-      }
-      
-  
-      /* 
-      System.out.println(solveNQueensUtil(0, 1, 1));
-      printSolution();
-      */
-  
-      /* 
-      for(int i = 0; i < N; i++){
-        if(solveNQueensUtil(i) == true){
-          printSolution();
-          System.out.println("------------------------------");
-        }
-  
       }
       */
   
