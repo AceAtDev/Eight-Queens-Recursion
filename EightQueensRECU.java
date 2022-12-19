@@ -4,7 +4,7 @@
  * A fully recursive algorithm to solve eight queens' problem
  * 
  * --------------------------------------------------------------------------------------------------------------------------------
- * Keep in mind that this algorithm is not not good for performance.
+ * Keep in mind that this algorithm is not good for performance.
  * You can by the way optimize the algorithm by using for loops and recursion instead, but it was created as a chellenge.
  * --------------------------------------------------------------------------------------------------------------------------------
  * 
