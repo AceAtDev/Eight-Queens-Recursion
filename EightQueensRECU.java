@@ -5,7 +5,7 @@
  * 
  * --------------------------------------------------------------------------------------------------------------------------------
  * Keep in mind that this algorithm is not not good for performance.
- * You can by the way optimize the algorithm by using for loops instead, but it was created as a chellenge.
+ * You can by the way optimize the algorithm by using for loops and recursion instead, but it was created as a chellenge.
  * --------------------------------------------------------------------------------------------------------------------------------
  * 
  * If you found a problem in the following code, please create issue on github.
